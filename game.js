@@ -70,7 +70,7 @@ function startGame() {
 }
 
 function showTextNode(textNodeIndex){
-    if (!textNodeIndex <= 0) {
+  
         const textNode = textNodes.find(textNode => textNode.id === 
             textNodeIndex);
             imageElement.src = textNode.image;
@@ -89,7 +89,7 @@ function showTextNode(textNodeIndex){
                     optionButtonsElement.appendChild(button)
                 }
             })  
-    }
+    
 
 }
 function showOption(option){
@@ -98,34 +98,13 @@ function showOption(option){
 
 function selectOption(option){
     const nextTextNodeId = option.nextText
-    if (nextTextNodeId <= 0 ){
-        // console.log(state)
-        if (nextTextNodeId != 0) {   
-            return startGame() } 
-        stateSummary();
-        // return startGame();
-    }
+   
     state = Object.assign(state, option.setState)
     showTextNode(nextTextNodeId)
 
 }
  
-function stateSummary(){
-   
 
-    for (const stat in state) {
-    //    console.log(stat)
-       quote += stat;
-       quote += ' ';
-
-    }
-    console.log(quote)
-    summaryElement.style.display = 'block';
-    // textElement.style.display = 'none';
-    summaryElement.innerHTML = quote;
-    showTextNode(100);
-
-}
 const textNodes = [
     { 
         id: 1, 
@@ -163,180 +142,7 @@ const textNodes = [
 
             }
         ]
-    },
-    { 
-        id: 3,
-        text: 'You stabbed deadly blow to your victim, who was just little miserable goblin from distant village',
-        options: [
-            {
-                text: 'Hide his weak body in the barrel',
-                setState: { body_in_barrel: true },
-                
-                nextText: 5
-            },
-            {
-            
-                text: 'leave his body on the floor as it is',
-                setState: { body_on_doorsteps: true },
-                
-                nextText: 5
-
-            }
-        ]
-    },
-    { 
-        id: 4,
-        text: 'After you open the door. A sad misserable goblin asked some bread and water',
-        options: [
-            {
-                text: 'Give Some bread chunk from closet and some water from jug',
-                setState: { good : true },
-                
-                nextText: 5
-            },
-            {
-            
-                text: 'Shoo it away. Saying begone you dirty peace of shit',
-                setState: { evil: true },
-                
-                nextText: 5
-
-            }
-        ]
-    },
-    { 
-        id: 5,
-        text: 'Some time latter you went to town centre and old cunt offered your some gold for far away',
-        options: [
-            {
-                text: 'Offer rusty dagger for it',
-                requiredState: (currentState) => currentState.rusty_dagger,
-                setState: { rusty_dagger: false, muslim_gold: true },
-                nextText: 7
-          
-            },
-            {
-            
-                text: 'offer blooded dagger',
-                requiredState: (currentState) => currentState.bloody_rusty_dagger,
-                setState: { bloody_rusty_dagger: false, muslim_gold: true },
-                
-                nextText: 6
-
-            },
-            {
-            
-                text: 'begone you peace of shit',
-              
-                nextText: 7
-
-            }
-        ]
-    },
-    { 
-        id: 6,
-        text: 'Whahaao its covered in blood!! What happened??',
-        options: [
-            {
-                text: 'Its fucking meaningless goblin come to rob me',
-                
-                setState: { suspicious: true},
-                nextText: 7
-          
-            },
-            {
-            
-                text: '(lie) I just butchered some boar meat for food',
-              
-                setState: { lied:true },
-                
-                nextText: 7
-
-            },
-            {
-            
-                text: 'Piss off ',
-                setState: { suspicious:true },
-              
-                nextText: 7
-
-            }
-        ]
-    },
-    { 
-        id: 7,
-
-        text: 'letter in evening you back to home. Few moments latter you relize it some folks commin for you.',
-        
-        options: [
-            {
-                text: 'I was arrested ',
-                requiredState: (currentState) => currentState.lied,
-                nextText: 10
-       
-          
-            },
-            {
-            
-                text: 'damn I was arrested' ,
-                requiredState: (currentState) => currentState.suspicious ,
-        
-                
-                nextText: 10
-
-            },
-            {
-            
-                text: 'fuck that body ',
-                requiredState: (currentState) => currentState.body_on_doorsteps ,
-               
-                nextText: 10
-
-            },
-            {
-            
-                text: 'They just pass by ',
-                
-               
-            
-
-            }
-        ]
-    },
-    { 
-        id: 10,
-
-        text: 'hahaha you bastard',
-        
-        options: [
-            {
-                text: 'game over ',
-                
-                nextText: 0
-       
-          
-            }
-           
-        ]
-    },
-    { 
-        id: 100,
-
-        text: 'Restart the game?',
-        
-        options: [
-            {
-                text: 'yes ',
-                
-                nextText: -1
-       
-          
-            }
-           
-        ]
     }
-    
-    
 
 ]
 
