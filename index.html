@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles.css" rel="stylesheet">
+    <script defer src="game.js"></script>
+    <title>Text-based-Mini-Game</title>
+</head>
+<body>
+    <div id="topBox" class="topBox">
+        <div class="imageBox"><img id="image" src="http://placehold.it/" alt="eventImage"></div>
+        <div class="rightBox">
+            <div class="stats">
+               <h3 id="playerName">Name: </h3>
+               <div id="statInfo" class="statInfo">
+                <span>HP: </span>
+                <span>DEF: </span>
+                <span>RANGE: </span>
+                <span>SWORD: </span>
+                <span>STRENGTH: </span>
+                <span>ENERGY: </span>
+               </div>
+               <span></span>
+
+            </div>
+
+            <div class="inventory">
+                <h5>Inventory</h5>
+            </div>
+        </div>
+
+    </div>
+    <div id="introContainer" class="introContainer ">
+        <div class="introTop"> 
+            
+        </div>
+        <div class="introBottom"> 
+        <label for="playerName">Your squire name:</label>
+        <input name='playerName' id='pName' type="text">
+        <button type="button" id="p-name-btn" onclick="submitInfo();">Submit</button>
+
+    </div>
+    </div>
+    <div id="container" class="container">
+        <div id="text">Text</div>
+        <div id="option-buttons" class="btn-grid">
+            <button class="btn">Option 1</button>
+            <button class="btn">Option 2</button>
+            <button class="btn">Option 3</button>
+            <button class="btn">Option 4</button>
+        </div>
+        <div id="summary" class="summary">
+    
+        </div>
+    </div>
+    
+</body>
+</html>
