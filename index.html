@@ -5,29 +5,73 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="styles.css" rel="stylesheet">
+
+    <script defer src="js/topBoxRight.js"></script>
+    <script defer src="js/submitInfo.js"></script>
     <script defer src="game.js"></script>
+    <script defer src="js/conditionChanges.js"></script>
+    <script defer src="js/showTextNode.js"></script>
+    <script defer src="js/textNodes.js"></script>
+    <script defer src="js/devConsole.js"></script>
+    <script defer src="js/optionSelection.js"></script>
+    <script defer src="js/combat"></script>
+    <script defer src="js/npc.js"></script>
+
+
     <title>Text-based-Mini-Game</title>
+
 </head>
 <body>
+    <div id ='devConsole' class="devConsole "> 
+        <h2>Developer Console</h2>
+        <div class="devMain">
+            <div class="stateList-Container"> 
+                <h5>Active States</h5>
+                
+                <ul id="stateList">
+                    
+                </ul>
+    
+            </div>
+            <div class="actions"> 
+                
+            </div>
+
+        </div>
+        
+    </div>
+
     <div id="topBox" class="topBox">
-        <div class="imageBox"><img id="image" src="http://placehold.it/" alt="eventImage"></div>
+        <div class="imageBox">
+            <img id="image" src="https://place-hold.it/500x300" alt="eventImage">
+        </div>
         <div class="rightBox">
+            <button type="button" id="devBtn" onclick="showDev();">DevConsole On</button>
+
             <div class="stats">
                <h3 id="playerName">Name: </h3>
                <div id="statInfo" class="statInfo">
-                <span>HP: </span>
-                <span>DEF: </span>
-                <span>RANGE: </span>
-                <span>SWORD: </span>
-                <span>STRENGTH: </span>
-                <span>ENERGY: </span>
+                <div>HP: <span class="skillSpan hp"></span>  </div>
+                <div>DEF: <span class="skillSpan"></span> </div>
+                <div>RANGE: <span class="skillSpan"></span> </div>
+                <div>SWORD: <span class="skillSpan"></span> </div>
+                <div>STRENGTH: <span class="skillSpan"></span> </div>
+                <div>ENERGY: <span class="skillSpan energy"></span> </div>
                </div>
-               <span></span>
+               
 
             </div>
 
             <div class="inventory">
                 <h5>Inventory</h5>
+                <div id='inventoryBox' class='inventoryBox'>
+                    <!-- <div>1</div>
+                    <div>1</div>
+                    <div>1</div>
+                    <div>1</div>
+                    <div>1</div>
+                    <div>1</div> -->
+                </div>
             </div>
         </div>
 
@@ -40,8 +84,7 @@
         <label for="playerName">Your squire name:</label>
         <input name='playerName' id='pName' type="text">
         <button type="button" id="p-name-btn" onclick="submitInfo();">Submit</button>
-
-    </div>
+     </div>
     </div>
     <div id="container" class="container">
         <div id="text">Text</div>
@@ -51,10 +94,15 @@
             <button class="btn">Option 3</button>
             <button class="btn">Option 4</button>
         </div>
+       
         <div id="summary" class="summary">
     
         </div>
     </div>
-    
+    <div id="notifications" class="notifications">
+        
+
+    </div>
+   
 </body>
 </html>
