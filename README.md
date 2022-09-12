@@ -2,6 +2,7 @@
 
 
 ### Project summary
+<a href ='https://xelderx.github.io/Text-Based-RPG/'>Check project DEMO</a>
 
 Developing this project only for learning purpose. Main task is: Create Text-based RPG type short mini game. Refreshing my  knowledge in Javascript. Using JS fundementaly basic skills (manupulating DOM, Objects, arrays and it's methods, some more complexity logic, debugging and etc.
 ###### Skills used:

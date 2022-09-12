@@ -152,14 +152,36 @@ function checkHP(player_hp, enemy_hp) {
     if (player_hp <= 0) {
         output = 'Oh no! you are dead... You have been kiled by <span class= \'markedObject\'>' + opponent.name + ' </span>'
         combatPrint(output);
-        return duelLost();
+        return duelOutcome('won');
     } else if (enemy_hp <= 0) {
         output = "You've defeated the <span class= \'markedObject\'> " + opponent.name + " </span>."
         combatPrint(output);
 
-        return duelWon();
+        return duelOutcome('lost');
     }
     return false;
+}
+function duelOutcome(outcome){
+    let result = outcome;
+    const outcomeBtnElement = document.createElement('button')
+    const combatContainer = document.getElementById('combatElement')
+    document.getElementById("attack").disabled = true;
+    outcomeBtnElement.type = "submit"
+    outcomeBtnElement.setAttribute('id', 'finish')
+    outcomeBtnElement.addEventListener("click", finishDuel, result);
+    outcomeBtnElement.textContent = "finish";
+    combatContainer.appendChild(outcomeBtnElement);
+    
+    function finishDuel(result){
+        textElement.classList.remove('hideContainer')
+        optionButtonsElement.classList.remove('hideContainer')
+        imageElement.classList.remove('hideContainer')
+    
+        document.getElementById('combatElement').parentNode.removeChild(document.getElementById('combatElement'));
+    
+
+    }
+
 }
 
 function duelLost() {
