@@ -17,22 +17,25 @@ function updateInventory(){
 
     Object.entries(items).forEach(entry=> {
         const [itemKey, itemValue] = entry;
-        const inventoryItem = document.createElement('div');
-        const itemImage = document.createElement('img')
-        const itemDescription = document.createElement('div')
-        itemImage.src = `./images/items/${itemKey}.png`
-        itemImage.style ='width:25px; '
-        itemDescription.classList.add("itemInfo");
-        itemDescription.innerHTML = `Item name: ${itemKey} <br> Item value: ${itemValue}`
-        inventoryItem.appendChild(itemImage);
-        inventoryItem.appendChild(itemDescription);
+        if(itemValue[0] === true){
+            const inventoryItem = document.createElement('div');
+            const itemImage = document.createElement('img')
+            const itemDescription = document.createElement('div')
+            itemImage.src = `./images/items/${itemKey}.png`
+            itemImage.style ='width:25px; '
+            itemDescription.classList.add("itemInfo");
+            itemDescription.innerHTML = `Item name: ${itemKey} <br> Item type: ${itemValue[1]}`
+            inventoryItem.appendChild(itemImage);
+            inventoryItem.appendChild(itemDescription);
+            inventoryBox.insertBefore(inventoryItem, inventoryBox.firstChild);
+
+        }
     
 
         // inventoryItem.innerHTML = `Item: ${itemKey} value is: ${itemValue} `
         // inventoryItem.style.fontFamily = 'Times New Roman';
     
        
-        inventoryBox.insertBefore(inventoryItem, inventoryBox.firstChild);
     }) 
 }
 

@@ -3,7 +3,7 @@
 
 ### Project summary
 
-Developing this project only for learning purpoises. Main task is: Create Text-based RPG type short mini game. Refreshing my  knowledge in Javascript. Using JS fundementaly basic skills manupulating DOM, Objects arrays and its methods, some more complexity logic, debugging and etc.
+Developing this project only for learning purpose. Main task is: Create Text-based RPG type short mini game. Refreshing my  knowledge in Javascript. Using JS fundementaly basic skills (manupulating DOM, Objects, arrays and it's methods, some more complexity logic, debugging and etc.
 ###### Skills used:
 * HTML,
 * CSS, 
@@ -18,6 +18,8 @@ Developing this project only for learning purpoises. Main task is: Create Text-b
 * added notification container and implemented notification about skills changes
 * added username validation
 * improved logic
+##### 2022
+* implemented basic combat system
 
 ### Author
 

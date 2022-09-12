@@ -1,7 +1,7 @@
 const textNodes = [
     { 
         id: 1, 
-        text: 'You are young squire and visiting Sir William\'s castle. During your visit time you were taking to the room, where you will spent night and rest before tommorow\'s training sesion. You were very pleased to be here, and can\'t wait for tommorow. Finally, you fell asleep',
+        text: 'You are young squire and visiting Sir William\'s castle. During your visit time you were taking to the room, where you will spent night and rest before tommorow\'s training session. You were very pleased to be here, and can\'t wait for tommorow. Finally, you fell asleep',
         image: 'images/1.jpg',
         options: [
             {
@@ -13,7 +13,7 @@ const textNodes = [
     },
     { 
         id: 2,
-        text: 'Next morning you woke up just before sun rise. You spent some time thinking what will awaits you in today\'s training. Few hours later somebody\'s knockin your door and shouts: squire ' + playerName + ' knight Rolph the Gracious will be waiting for you after launch at the Rose n Wine Tavern. Now come for the your royal launch to refill you energy before awaiting long training sesion',
+        text: 'Next morning you woke up just before sun rise. You spent some time thinking what will awaits you in today\'s training. Few hours later somebody\'s knockin your door and shouts:  -Squire ' + playerName + '! . Knight Rolph the Gracious will be waiting for you after launch at the Rose n Wine Tavern. Now come for the your royal launch to refill you energy before awaiting long training sesion',
         image: 'images/2.jpg',
         options: [
             {
@@ -72,16 +72,16 @@ const textNodes = [
     },
     { 
         id: 3.1,
-        text: 'Guard: you are very brave fella. I see bright future in your spirit... Take this necklace, It\'s my lucky telisman, that my grandpa gave to me long time ago, perhaps it will have some useful benefits for your adventure. Me is quite old and I berely leave this castle\'s garison, that my duty to spend my rest of life in this boredom.. So this item has no uses for me anymore ',
+        text: 'Guard: you are very brave fella. I see bright future in your spirit... Take this necklace, It\'s my lucky talisman, that my grandpa gave to me long time ago, perhaps it will have some useful benefits for your adventure. Me is quite old and I berely leave this castle\'s garison, that my duty to spend my rest of life in this boredom.. So this item has no uses for me anymore ',
         options: [
             {
                 text: 'Take neckace',
-                setItem: {old_neckace: true},   
+                setItem: {old_neckace: [true, 'jewelery']},   
                 nextText: 4
             },
             {
             
-                text: 'Refuse. Saying: I can\'t take that item it is too value for you',
+                text: 'Refuse. Saying: I can\'t take that item it is too value family reliqe for him',
                 setState: { kind: 5 },
                 nextText: 4
 
@@ -93,14 +93,14 @@ const textNodes = [
         text: 'Some time later you went straight to the Rose n Wine Tavern, where you supposed to meet the Rolph the Gracious. Few moment later Rolph the Gracious shows up and start conversation with you. Rolph the Gracious: Well, perhaps you are my new squire. My name is Rolph known as the Gracious. What your name and what is your backstory ?' ,
         options: [
             {
-                text: 'My name is ' + playerName + 'That right I\'m a new squire. I came here to become a knight. My parents passed away many yearsago. I would like to be  part of the knighthood. I cant\'t wait for our training sesion',
+                text: 'My name is ' + playerName + ' That right I\'m a new squire. I came here to become a knight. My parents passed away many yearsago. I would like to be  part of the knighthood. I cant\'t wait for our training sesion',
                 setStats: { Energy: -2 },    
                 setState: { motivated : 3 },
                 nextText: 5
             },
             {
             
-                text: 'My name is ' + playerName + 'I came here because I don\'t have nowhere to go my parents passed away. So my life path brings me there',
+                text: 'My name is ' + playerName + ' I came here because I don\'t have nowhere to go my parents passed away. So my life path brings me there',
                 setStats: { Energy: -1 },
                 setState: { motivated : -1 },
                 nextText: 5
@@ -108,7 +108,7 @@ const textNodes = [
             },
             {
             
-                text: 'Call me ' + playerName + 'I rather won\'t tell anything about myself... lets go training',
+                text: 'Call me ' + playerName + ' I rather won\'t tell anything about myself... lets go training',
                 setStats: { Energy: -1 },
                 setState: { motivated : -1, rude: 2 },
                 
@@ -117,7 +117,7 @@ const textNodes = [
             },
             {
             
-                text: 'Oh no no, I am Jacky.. the pit-digger. I am here to make you die! ',
+                text: 'Oh no no, I am Jacky.. the pit-digger. I am here to make you die! (You went crazy, lol) ',
                 setState: { Energy: -1 },
                 setState: { rude : -50 },
                 nextText: 4.1
@@ -133,16 +133,40 @@ const textNodes = [
                 text: 'I tried punch to face',
                 setStats: { Energy: -5 },   
                 callEvent: 1, 
+                nextText: 10
                
-                nextText: 4.2
+               
                 
             },
             {
             
                 text: 'Ran out like a coward',
                 setStats: { Energy: -10 },
-                nextText: 0
+                nextText: 10
 
+            }
+        ]
+    },
+    { 
+        id: 5,
+        text: 'Rolph the Gracious takes you as his squire for a walk explaining his training methods. Some time later you both came back to tavern. The knight asked come to storage room. And he said: for a training you need a weapon. Let me give you one of weapon: Choose whisely.',
+        options: [
+            {
+                text:'I would like to take  a dagger',
+                setItem: { sharp_dagger: [true, 'weapon'] },
+                nextText: 5.1
+            },
+            {
+            
+                text: 'I always wanted a sword!',
+                setItem: { rusty_sword: [true, 'weapon'] },
+                nextText: 5.1
+
+            },
+            {
+                text: 'I prefer crush style weapon. So Mace all the way!',
+                setItem: { iron_mace: [true, 'weapon'] },
+                nextText: 5.1
             }
         ]
     },
@@ -154,7 +178,7 @@ const textNodes = [
         options: [
             {
                 text: 'game over ',
-                nextText: 0
+                nextText: 100
             }
          
         ]

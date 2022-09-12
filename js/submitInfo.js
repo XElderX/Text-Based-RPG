@@ -2,9 +2,13 @@ const introInput = document.querySelector('.introBottom');
 function blinkIt() {
     var blinks = document.getElementsByTagName("p");
     for(var i = 0, l = blinks.length; i < l; i++){
-      var blink = blinks[i];
-      var visiblity = blink.style.visibility;
-      blink.style.visibility = visiblity == 'visible' ? 'hidden' : 'visible';
+      console.log(blinks.length)
+      if (blinks[i].getAttribute('id')==='play') {
+        var blink = blinks[i];
+        var visiblity = blink.style.visibility;
+        blink.style.visibility = visiblity == 'visible' ? 'hidden' : 'visible';
+        
+      }
      }
    }
   
@@ -35,6 +39,7 @@ function submitInfo(){
     const nameHeader = document.createElement('h3');
     const player = document.createTextNode(playerName);
     const underContent = document.createElement('p');
+    underContent.setAttribute('id', 'play');
     nameHeader.textContent = "Hello, ";
     nameHeader.appendChild(player);
     underContent.innerHTML = "Press <span style='color:red'>play</span>, to start new game"

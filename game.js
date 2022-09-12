@@ -1,4 +1,8 @@
 
+const textElement = document.getElementById('text');
+const optionButtonsElement = document.getElementById('option-buttons');
+const imageElement = document.getElementById('image');
+
 const topBox = document.getElementById('topBox');
 const mainContainer = document.getElementById('container');
 const startContainer = document.getElementById('introContainer');

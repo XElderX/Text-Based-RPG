@@ -1,6 +1,3 @@
-const textElement = document.getElementById('text');
-const optionButtonsElement = document.getElementById('option-buttons');
-const imageElement = document.getElementById('image');
 
 function showTextNode(textNodeIndex){
     // console.log(stats)
@@ -21,7 +18,7 @@ function showTextNode(textNodeIndex){
             ? imageElement.src = textNode.image 
             : imageElement.src = 'https://place-hold.it/500x300';
 
-            (textNodeIndex == 2) 
+            (textNodeIndex == 2 ) 
             ? textElement.innerText = textNode.text.replace("[name]", playerName) 
             : textElement.innerText = textNode.text
             while (optionButtonsElement.firstChild) {
@@ -30,7 +27,11 @@ function showTextNode(textNodeIndex){
             textNode.options.forEach(option => {
                 if (showOption(option)) {
                     const button = document.createElement('button')
-                    button.innerText = option.text
+                    let variable;
+                    (textNodeIndex == 4 ) 
+                    ? button.innerText = option.text.replace("[name]", playerName)
+                    : button.innerText = option.text
+                    
                     button.classList.add('btn')
                     button.addEventListener('click', () => selectOption(option))
                     optionButtonsElement.appendChild(button)

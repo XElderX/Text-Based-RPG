@@ -26,10 +26,35 @@ body{
 }
 .imageBox{
     width:80%;
+    
 }
 .imageBox img{
     width: 100%;
 
+}
+.imageBox #combatOutput{
+    width: 100%;
+    text-align: center;
+    overflow-y:scroll;
+    height:200px;
+    
+    background-color: rgb(145,163,176);
+    border: groove 3px black;
+    
+    padding:2%;
+
+}
+.lineStartEnd{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color:red;
+}
+.markedObject{
+    color:green;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-decoration: underline;
+}
+.imageBox .eventAction{
+    font-family:'Times New Roman', Times, serif;
 }
 .rightBox{
     width:20%;
